@@ -305,7 +305,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
         !topic) {
         NSException* myException = [NSException
                                     exceptionWithName:@"topic must not be nil"
-                                    reason:[NSString stringWithFormat:@"%@", topic]
+                                    reason:topic
                                     userInfo:nil];
         @throw myException;
     }
@@ -315,7 +315,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
         topic.length < 1) {
         NSException* myException = [NSException
                                     exceptionWithName:@"topic must not at least 1 character long"
-                                    reason:[NSString stringWithFormat:@"%@", topic]
+                                    reason:topic
                                     userInfo:nil];
         @throw myException;
     }
@@ -544,7 +544,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
         self.transport.delegate = nil;
     }
 
-    if(self.decoder){
+    if (self.decoder) {
         [self.decoder close];
         self.decoder.delegate = nil;
     }
@@ -805,7 +805,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
                                 if (self.effectiveKeepAlive > 0) {
                                     self.keepAliveTimer = [GCDTimer scheduledTimerWithTimeInterval:self.effectiveKeepAlive
                                                                                            repeats:YES
-                                                                                             queue: self.queue
+                                                                                             queue:self.queue
                                                                                              block:^() {
                                                                                                  [weakSelf keepAlive];
                                                                                              }];
@@ -1186,7 +1186,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
                                                           mid:(flow.messageId).intValue
                          ];
         }
-        if(self.messageHandler){
+        if (self.messageHandler){
             self.messageHandler(flow.data, flow.topic);
         }
         if (processed) {
@@ -1259,7 +1259,7 @@ NSString * const MQTTSessionErrorDomain = @"MQTT";
     }
     [self closeInternal];
     
-    if(self.connectionHandler){
+    if (self.connectionHandler) {
         self.connectionHandler(eventCode);
     }
 

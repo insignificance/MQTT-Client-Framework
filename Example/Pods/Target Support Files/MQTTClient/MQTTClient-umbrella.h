@@ -31,7 +31,6 @@
 #import "MQTTProperties.h"
 #import "MQTTSession.h"
 #import "MQTTSessionLegacy.h"
-#import "MQTTSessionSynchron.h"
 #import "MQTTTransport.h"
 #import "GCDTimer.h"
 

@@ -21,7 +21,9 @@ Pod::Spec.new do |mqttc|
 		core.dependency 'MQTTClient/Min'
 		core.dependency 'MQTTClient/Manager'
 	end
-
+	mqttc.xcconfig = {
+        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+        }
 	mqttc.subspec 'Min' do |min|
 		min.source_files =	"MQTTClient/MQTTClient/MQTTCFSocketDecoder.{h,m}",
 					"MQTTClient/MQTTClient/MQTTCFSocketEncoder.{h,m}",
