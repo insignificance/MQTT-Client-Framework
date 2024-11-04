@@ -12,10 +12,9 @@ Pod::Spec.new do |mqttc|
 	}
 
 	mqttc.requires_arc = true
-	mqttc.platform = :ios, "13.0", :osx, "10.10", :tvos, "9.0"
+	mqttc.platform = :ios, "13.0", :osx, "10.13"
 	mqttc.ios.deployment_target = "13.0"
-	mqttc.osx.deployment_target = "10.10"
-	mqttc.tvos.deployment_target = "9.0"
+	mqttc.osx.deployment_target = "10.13"
 	mqttc.default_subspec = 'Core'
 
 	mqttc.subspec 'Core' do |core|
