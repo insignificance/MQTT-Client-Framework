@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'MQTTClientmacOS' do
 	pod 'SocketRocket', '0.5.1'
+	pod 'MQTTClient' , :git => 'https://github.com/insignificance/MQTT-Client-Framework.git', :tag => '0.15.4'
     
     target 'MQTTClientmacOSTests' do
         inherit! :search_paths
@@ -12,6 +13,7 @@ target 'MQTTClientmacOS' do
 end
 
 target 'MQTTClientiOS' do
+    pod 'MQTTClient' , :git => 'https://github.com/insignificance/MQTT-Client-Framework.git', :tag => '0.15.4'
     pod 'SocketRocket', '0.5.1'
     
     target 'MQTTClientiOSTests' do
@@ -21,7 +23,7 @@ end
 
 target 'MQTTClienttvOS' do
     pod 'SocketRocket', '0.5.1'
-    
+    pod 'MQTTClient' , :git => 'https://github.com/insignificance/MQTT-Client-Framework.git', :tag => '0.15.4'	
     target 'MQTTClienttvOSTests' do
         inherit! :search_paths
     end
